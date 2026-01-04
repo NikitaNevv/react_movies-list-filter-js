@@ -8,10 +8,11 @@ const toFilterMovies = (movies, query) => {
     return movies;
   }
 
+  const searchQuery = query.toLowerCase().trim();
+
   return movies.filter(movie => {
     const movieTitle = movie.title.toLowerCase();
     const movieDescription = movie.description.toLowerCase();
-    const searchQuery = query.toLowerCase().trim();
 
     return (
       movieTitle.includes(searchQuery) || movieDescription.includes(searchQuery)
