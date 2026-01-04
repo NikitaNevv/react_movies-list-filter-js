@@ -1,7 +1,7 @@
 import './App.scss';
+import { useState } from 'react';
 import { MoviesList } from './components/MoviesList';
 import moviesFromServer from './api/movies.json';
-import { useState } from 'react';
 
 const toFilterMovies = (movies, query) => {
   if (!query) {
@@ -21,7 +21,7 @@ const toFilterMovies = (movies, query) => {
 
 export const App = () => {
   const [query, setQuery] = useState('');
-  let visibleMovies = toFilterMovies(moviesFromServer, query);
+  const visibleMovies = toFilterMovies(moviesFromServer, query);
 
   return (
     <div className="page">
